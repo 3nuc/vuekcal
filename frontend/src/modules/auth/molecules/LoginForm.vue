@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="handleLogin()">
-    <VkInput v-model:value="username" :placeholder="$t('login')" />
+    <VkInput v-model:value="username" :placeholder="$t('username')" />
     <VkInput
       v-model:value="password"
       type="password"
       :placeholder="$t('password')"
     />
-    <VkButton>hey</VkButton>
+    <VkButton v-t="'login'"/>
   </form>
 </template>
 
