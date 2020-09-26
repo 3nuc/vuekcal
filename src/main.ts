@@ -1,12 +1,20 @@
-import Vue from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
-import router from "./router";
-import store from "./store";
 
-Vue.config.productionTip = false;
+import { router } from "@/utils/router";
+import { i18n } from "@/utils/i18n/i18n";
+import { store } from "@/utils/store";
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+import VkInput from "@/atoms/VkInput.vue";
+import VkButton from "@/atoms/VkButton.vue";
+
+const app = createApp(App);
+
+app.use(router);
+app.use(store);
+app.use(i18n);
+
+app.component("VkInput", VkInput);
+app.component("VkButton", VkButton);
+
+app.mount("#app");
