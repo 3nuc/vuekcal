@@ -1,5 +1,5 @@
-declare module "*.vue" {
-  import { DefineComponent, defineComponent } from "vue";
-  const Component: DefineComponent<any, any>;
-  export default Component;
+declare module '*.vue' {
+  import { DefineComponent } from 'vue'
+  const component: DefineComponent<{}, {}, any>
+  export default component
 }
