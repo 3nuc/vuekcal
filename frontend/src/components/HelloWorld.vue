@@ -1,5 +1,5 @@
 <template>
-<FoodItemList/>
+  <FoodItemList/>
 </template>
 
 <script lang="ts">

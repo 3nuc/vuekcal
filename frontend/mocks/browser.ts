@@ -13,8 +13,8 @@ const handlers = [
     const products : MyFoodItem[] = [
       {
        id: "241afsafasf",
-       name: 'Parówki',
-       producer: '',
+       name: 'Serek wiejski',
+       producer: 'Piątnica',
        calories: 200,
        servingSizeInGrams: 50,
       }
