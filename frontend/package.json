@@ -7,13 +7,23 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.0.5"
+    "@vueuse/core": "^5.0.3",
+    "@vueuse/integrations": "^5.0.3",
+    "axios": "^0.21.1",
+    "lodash-es": "^4.17.21",
+    "vue": "^3.0.5",
+    "vuetify": "^3.0.0-alpha.6"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.4",
     "@vitejs/plugin-vue": "^1.2.2",
     "@vue/compiler-sfc": "^3.0.5",
+    "msw": "^0.29.0",
     "typescript": "^4.1.3",
     "vite": "^2.3.0",
     "vue-tsc": "^0.0.24"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
