@@ -1,6 +1,8 @@
 import { useSearchbox } from "../logic"
 
-it('fires request on mounted', () => {
-  const {searchResults} = useSearchbox()
-  expect(searchResults).toHaveLength(1)
+it('returns items', async () => {
+  const {searchResults, search} = useSearchbox()
+  await search();
+  expect(searchResults.value).toHaveLength(1)
 })
+

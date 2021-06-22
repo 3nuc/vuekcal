@@ -1,4 +1,5 @@
 import {rest, setupWorker} from 'msw'
+import {handlers } from './handlers'
 
 export interface MyFoodItem {
   id: string;
@@ -8,20 +9,5 @@ export interface MyFoodItem {
   producer: string;
   servingSizeInGrams: number;
 }
-const handlers = [
-  rest.get<MyFoodItem[]>('/api/fooditems', (_req, res,ctx) => {
-    const products : MyFoodItem[] = [
-      {
-       id: "241afsafasf",
-       name: 'Serek wiejski',
-       producer: 'Piątnica',
-       calories: 200,
-       servingSizeInGrams: 50,
-      }
-    ]
-    return res(ctx.json(products))
-
-  })
-]
 
 export const mockServiceWorker = setupWorker(...handlers)

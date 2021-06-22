@@ -7,5 +7,6 @@ module.exports = {
     "^.+\\js$": "babel-jest",
   },
   moduleFileExtensions: ['vue', 'js', 'json', 'jsx', 'ts', 'tsx', 'node'],
-  transformIgnorePatterns: ["<rootDir>/node_modules/(?!lodash-es)"]
+  transformIgnorePatterns: ["<rootDir>/node_modules/(?!lodash-es)"],
+  setupFilesAfterEnv: ["<rootDir>/test/unit/jestSetup.ts"]
 }

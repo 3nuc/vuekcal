@@ -16,6 +16,7 @@ export const useSearchbox = () => {
   const debouncedOnSearchTermChange = _.debounce(onSearchTermChange, debounceDelayMs);
 
   return {
+    search,
     searchTerm,
     debouncedOnSearchTermChange,
     searchResults,
