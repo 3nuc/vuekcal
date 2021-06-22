@@ -1,5 +1,5 @@
 <template>
-  <input class="border-2 active:border-red-200 h-10 px-2">  
+  <input class="border-2 rounded-sm border-solid border-black focus:border-green-200 h-10 px-2">  
 </template>
 
 <script>
