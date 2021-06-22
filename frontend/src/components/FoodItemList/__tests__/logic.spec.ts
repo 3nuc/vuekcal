@@ -5,6 +5,6 @@ import {rest} from 'msw'
 it('returns items', async () => {
   const {searchResults, search} = useSearchbox()
   await search();
-  expect(searchResults.value).toHaveLength(1)
+  expect(searchResults.value).not.toHaveLength(0)
 })
 
