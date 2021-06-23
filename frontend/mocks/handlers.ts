@@ -2,6 +2,16 @@ import { rest } from "msw"
 import { MyFoodItem } from "./browser"
 
 export const handlers = [
+  rest.get<MyFoodItem>('/api/fooditems/10', (_req, res,ctx) => {
+    const product = {
+       id: "1",
+       name: 'Serek wiejski',
+       producer: 'Piątnica',
+       calories: 200,
+       servingSizeInGrams: 50,
+      };
+     return res(ctx.json(product));
+  }),
   rest.get<MyFoodItem[]>('/api/fooditems', (_req, res,ctx) => {
     const products : MyFoodItem[] = [
       {
@@ -21,5 +31,5 @@ export const handlers = [
     ]
     return res(ctx.json(products))
 
-  })
+  }),
 ]

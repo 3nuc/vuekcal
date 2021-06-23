@@ -1,10 +1,8 @@
 <template>
-  <FoodItemList/>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
-import FoodItemList from './FoodItemList/FoodItemList.vue'
 export default defineComponent({
   name: 'HelloWorld',
   props: {
@@ -12,9 +10,6 @@ export default defineComponent({
       type: String,
       required: true
     }
-  },
-  components: {
-    FoodItemList,
   },
   setup() {
     const count = ref(0)

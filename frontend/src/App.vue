@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <router-view/>
 </template>
 
 <script lang="ts">

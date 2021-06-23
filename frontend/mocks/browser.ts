@@ -1,4 +1,4 @@
-import {rest, setupWorker} from 'msw'
+import {setupWorker} from 'msw'
 import {handlers } from './handlers'
 
 export interface MyFoodItem {
