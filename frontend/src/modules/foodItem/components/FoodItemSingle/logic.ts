@@ -3,11 +3,10 @@ import { axiosInstance } from "../../../../utils/api/axios"
 import { useAxios } from "../../../../utils/composables/useAxios"
 
 export const useSingleFoodItem = () => {
-  const {data, execute, isLoading} = useAxios<MyFoodItem>('/fooditems/', {}, axiosInstance)
-  const download = (id: string) => execute(id)
+  const fetcher = useAxios<MyFoodItem>('/fooditems/', {}, axiosInstance)
+  const execute = (id: string) => fetcher.execute(id)
   return {
-    data,
-    download,
-    isLoading
+    fetcher,
+    execute
   }
 }
