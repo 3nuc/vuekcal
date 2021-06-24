@@ -4,8 +4,10 @@ import App from './App.vue'
 import './index.css'
 import { router } from './utils/router/router'
 
-mockServiceWorker.start()
+mockServiceWorker.start().then(() => {
+    const app = createApp(App);
+    app.use(router)
+    app.mount('#app')
+  }
+)
 
-const app = createApp(App);
-app.use(router)
-app.mount('#app')
