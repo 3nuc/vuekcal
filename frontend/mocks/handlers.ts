@@ -5,8 +5,8 @@ export const handlers = [
   rest.get<MyFoodItem>('/api/food/:id', (_req, res,ctx) => {
     const product = {
       id: "1",
-      name: 'Serek wiejski',
-      producer: 'Piątnica',
+      name: 'Przykładowy produkt',
+      producer: 'Firma',
       calories: 200,
       servingSizeInGrams: 50,
     };
