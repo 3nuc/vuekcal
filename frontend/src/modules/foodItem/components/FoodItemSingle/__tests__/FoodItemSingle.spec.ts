@@ -6,7 +6,12 @@ it('downloads fooditem on render', async () => {
   await waitFor(() => expect(getByTestId('container')).toBeVisible())
 })
 
-it.skip('shows spinner when loading', () => {
+it('shows spinner when loading', () => {
   const {getByTestId} = render(FoodItemSingle)
   expect(getByTestId('spinner')).toBeVisible()
+})
+
+it('shows kilocalories without fractions', () => {
+  const {getByTestId} = render(FoodItemSingle)
+  
 })
