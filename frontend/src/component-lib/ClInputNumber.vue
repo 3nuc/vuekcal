@@ -2,7 +2,7 @@
   <ClInput ref="input" :modelValue="modelValue" @input="handleInput($event.target.value)" />
 </template>
 <script lang="ts">
-import { defineComponent, getCurrentInstance, ref, watch } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import ClInput from './ClInput.vue'
 
 export default defineComponent({
@@ -17,10 +17,6 @@ export default defineComponent({
       const numbersOnly = newValue.replace(/\D/g, '');
       emit('update:modelValue', numbersOnly) 
     }	
-
-    watch([props.modelValue], (newvalue) => {
-      input.value.value = newvalue;
-    })
     return {
       handleInput,
       input

@@ -1,9 +1,9 @@
 <template>
   <div class="m-32">
-    <ClInput class="w-full" :value="searchboxLogic.searchTerm.value" @input="e=> searchboxLogic.debouncedOnSearchTermChange(e.target.value)" />
-    <ClSpinner class="mx-auto mt-2" v-if="searchboxLogic.isLoading.value"/>
+    <ClInput class="w-full" :modelValue="searchTerm" @input="e=> onSearchTermChange(e.target.value)" />
+    <ClSpinner class="mx-auto mt-2" v-if="isLoading"/>
     <template v-else>
-      <FoodItem v-for="item in searchboxLogic.searchResults.value" :key="item.id" @click="onItemClick(item.id)">
+      <FoodItem v-for="item in searchResults" :key="item.id" @click="onItemClick(item.id)">
         <template #name>{{item.name}}</template>
         <template #calories> {{item.calories}} kcal</template>
         <template #producer> {{item.producer}}</template>
@@ -26,9 +26,12 @@ export default {
     const onItemClick = (id: string) => {
       router.push({name: 'SingleFoodItem', params: {id}})
     }
-    const searchboxLogic = useSearchbox()
+    const { searchResults, searchTerm, isLoading, onSearchTermChange } = useSearchbox()
     return {
-      searchboxLogic,
+      searchResults,
+      searchTerm,
+      onSearchTermChange,
+      isLoading,
       onItemClick
     }    
   }
